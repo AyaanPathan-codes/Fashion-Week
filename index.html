@@ -62,7 +62,7 @@
         #right {
     grid-column: 3;
     grid-row: 1 / 4;
-    width: 100vh;
+    width: 100%;
     height: 100vh; /* Full viewport height */
     position: relative; /* To allow absolute positioning of the video */
     overflow: hidden; /* Prevents overflow of the video */
@@ -72,8 +72,9 @@
 }
 
 #right video {
-    width: 100vh;
-    height: 100vh;
+    margin: 0px -130px;
+    width: 70%;
+    height: 90%;
     object-fit: cover; /* Ensures the video covers the area without distorting */
     position: absolute;
     top: 50%;
@@ -84,9 +85,9 @@
         /* Styles for the magnifying glass icon */
         .icon {
             position: absolute; /* Position it relative to the #right container */
-            top:25vh;
+            top:25px;
             rotate: 100deg;
-            right: 20vh; /* Distance from the right */
+            right: 20px; /* Distance from the right */
             font-size: 24px; /* Size of the icon */
             color: black; /* Color of the icon */
             z-index: 10; /* Ensure the icon is above other content */
@@ -116,12 +117,12 @@
         #circle {
     position: absolute;
     background-color: rgb(216, 198, 131);
-    width: 70vw;
-    height: 70vh;
+    width: 70px;
+    height: 70px;
     border-radius: 50%; /* Keeps the circle perfectly round */
     justify-self: center;
     top: 300px;
-    margin-left: 696vh;
+    margin-left: 696px;
     z-index: 70;
     display: flex; /* To center the icon within the circle */
     align-items: center;
