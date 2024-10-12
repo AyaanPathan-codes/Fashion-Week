@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> 
+    <title>FashionWeek Website</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensures padding and borders are included in element's total width and height */
+        }
+
+        body, html {
+            height: 100%; /* Makes sure the body takes up the full height */
+            overflow: hidden; /* Hides any overflow, preventing scrolling */
+        }
+
+        #main {
+            width: 100%;
+            height: 100vh; /* Sets the height to the full viewport height */
+            background-color: #ededed;
+            display: grid;
+            grid-template-columns: 25% 25% 50%;
+            grid-template-rows: 30% 55% 15%;
+        }
+
+        #left-top-left {
+            padding: 40px;
+        }
+
+        #square {
+            height: 25px;
+            width: 25px;
+            background-color: black;
+            transform: rotate(45deg); /* Corrected to 'transform' instead of 'rotate' */
+        }
+
+        #left-top-right h4 {
+            margin-bottom:35px;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #left-top-right h5 {
+            padding-bottom: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #left-top-right {
+            justify-self: right;
+            padding: 0px 10px;
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        #right {
+    grid-column: 3;
+    grid-row: 1 / 4;
+    width: 100vh;
+    height: 100vh; /* Full viewport height */
+    position: relative; /* To allow absolute positioning of the video */
+    overflow: hidden; /* Prevents overflow of the video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right video {
+    width: 100vh;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video covers the area without distorting */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the video */
+}
+
+        /* Styles for the magnifying glass icon */
+        .icon {
+            position: absolute; /* Position it relative to the #right container */
+            top:25vh;
+            rotate: 100deg;
+            right: 20vh; /* Distance from the right */
+            font-size: 24px; /* Size of the icon */
+            color: black; /* Color of the icon */
+            z-index: 10; /* Ensure the icon is above other content */
+          
+        }
+        .icon:hover{
+            transform: rotate(-100deg);
+            transition: transform 0.3s ease-in-out;
+            transform: rotate(-100deg);
+            
+        }
+        
+
+        #left-center h1:nth-child(2n) {
+            text-align: center;
+        }
+
+        #left-center h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 6vw;
+            font-size: 5vw;
+            margin: 0;
+            padding: 0;
+        }
+        #circle {
+    position: absolute;
+    background-color: rgb(216, 198, 131);
+    width: 70vw;
+    height: 70vh;
+    border-radius: 50%; /* Keeps the circle perfectly round */
+    justify-self: center;
+    top: 300px;
+    margin-left: 696vh;
+    z-index: 70;
+    display: flex; /* To center the icon within the circle */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for smooth movement */
+}
+
+#circle:hover {
+    background-color: rgb(255, 208, 0); /* Change background color on hover */
+    transform: translateX(20px); /* Move the circle 20px to the right */
+    transition: transform 0.3s ease-in-out;
+}
+
+#circle i {
+    font-size: 24px; /* Size of the arrow icon */
+    color: #000; /* Color of the arrow icon */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the arrow movement */
+}
+
+/* Arrow movement on hover */
+#circle:hover i {
+    transform: translateX(20px); /* Move the arrow icon 20px to the right */
+}
+
+
+        #left-center {
+            grid-column: 1 / 3;
+            padding: 40px;
+        }
+
+        #left-bottom p {
+            margin-top: -25px;
+            padding: 40px;
+            grid-column: 3 / 3;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="left-top-left">
+            <div id="square"></div>
+        </div>
+        <div id="left-top-right">
+            <h4>Menu</h4>
+            <h5><i class="fa-solid fa-home"></i> Home Page</h5>
+            <h5><i class="fa-solid fa-briefcase"></i> Portfolio</h5>
+            <h5><i class="fa-solid fa-calendar-alt"></i> Fashion Week @ -</h5>
+            <h5><i class="fa-solid fa-phone"></i> 90876536271</h5>
+        </div>
+        <div id="left-center">
+            <h1>Select</h1>
+            <h1>Fashion</h1>
+            <h1>Mod.05 -</h1>
+            <h1>Scene</h1>
+
+            <div id="circle"><i class="fa-solid fa-arrow-right" ></i></div>
+        </div>
+        <div id="left-bottom">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil explicabo labore veritatis autem aspernatur, possimus neque mollitia ut quasi eius!</p>
+        </div>
+        <div id="right">
+            <video autoplay muted loop src="./video.mp4"></video>
+            <i class="fa-solid fa-magnifying-glass icon"></i>    
+        </div>
+    </div>
+</body>
+</html>
